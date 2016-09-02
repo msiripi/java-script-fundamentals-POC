@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        //object.create function with parameters
+        var obj1 = {
+            a: 'osi', b: 'technologies',
+            getdata: function (name) {
+                alert(name)
+            }
+        }
+
+        var obj2 = Object.create(obj1, {
+            p: { value: 200, writable: true, enumerable: true, configurable: true },
+            q: { value: { a: 3, b: 7 }, writable: true, enumerable: true, configurable: true }
+        })
+
+        console.log(obj2.a);
+        console.log(obj2.p);
+        console.log(obj2.q);
+        console.log(Object.getOwnPropertyDescriptor(obj2,'q'));
+        obj2.getdata("mamatha")
+    </script>
+</body>
+</html>
