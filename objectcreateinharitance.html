@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+         parent={
+             get: function mymethode() {
+                 return this.val;
+             },
+             val:20
+        }
+
+        //var p = new parent();
+        var child = Object.create(parent);
+
+        child.val = 30;
+
+        var nextchild = Object.create(child);
+        nextchild.val = 40;
+
+        alert(parent.get())
+        alert(child.get())
+        alert(nextchild.get())
+
+       
+    </script>
+</body>
+</html>
