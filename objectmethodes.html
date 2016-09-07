@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+       var mymethode = {
+            get: function mychild() {
+                return this.val;
+            },
+          val : 24
+       }
+     //  alert(mymethode.get())
+
+       var obj = {
+           val:35
+       }
+       //alert(mymethode.get.call(obj));
+
+       function getmethode(a) {
+        console.log(this)
+          return this.val;
+       }
+       var k = new getmethode();
+       var object1 = {
+           get1: getmethode,
+           val:88
+       }
+       object1.name = "arjun";
+
+       var object2 = {
+           get1: getmethode,
+           val:100
+       }
+      
+       //alert(object1.get1())
+       //alert(object2.get1());
+
+       alert(getmethode.apply(object1, ["mamatha"]));
+ 
+    </script>
+
+</body>
+</html>
+
+
+
+[29/08/2016 10:21:36] *** mamatha siripi07 would like to add you on Skype
+
+Hi Subhrajit Nayak, I'd like to add you as a contact. ***
+[29/08/2016 10:22:53] *** Subhrajit Nayak has shared contact details with mamatha siripi07. ***
+[29/08/2016 10:23:09] Subhrajit Nayak: hi
+[29/08/2016 10:23:43] mamatha siripi07: hi
+[29/08/2016 13:35:56] Subhrajit Nayak: May I come in maam?
+[29/08/2016 13:36:29] mamatha siripi07: yes
+[29/08/2016 13:36:42] Subhrajit Nayak: ha ha kidding
+[29/08/2016 13:36:48] mamatha siripi07: kk
+[29/08/2016 13:37:22] Subhrajit Nayak: u had the interview today?
+[29/08/2016 13:37:35] mamatha siripi07: no tomorrow
+[29/08/2016 13:37:39] Subhrajit Nayak: ok
+[10:40:21] Subhrajit Nayak: gud morning
+[10:40:38] mamatha siripi07: very good morng
+[10:41:10] Subhrajit Nayak: what time u came
+[10:41:24] mamatha siripi07: 10.5 am
+[11:55:03] mamatha siripi07: Hi
+[11:55:12] Subhrajit Nayak: hi
+[11:55:50] mamatha siripi07: 3. PrototypalInheritance.js : Implement prototypal inheritance using an object of Library. Create just one item using new Item(). Create other items using prototypal inheritance using Object.create(), and change the id, name, price, type. Add all items in catalog.
+[11:56:33] mamatha siripi07: this is question in prototypicalinharitance what is object of library
+[11:59:33] mamatha siripi07: r u understand
+[12:04:41] Subhrajit Nayak: 1 sec
+[12:04:54] mamatha siripi07: kk no problem
+[12:05:06] Subhrajit Nayak: just trying to understand
+[12:09:28] Subhrajit Nayak: come
+[12:10:19] mamatha siripi07: kk no problem I understand
+[12:10:26] Subhrajit Nayak: ok
+[14:09:11] mamatha siripi07: once come here please
+[14:09:27] Subhrajit Nayak: k
+[14:15:37] mamatha siripi07: 1. ConstructorFunction.js: Implement a construction function for Item with Id, name, price, type as arguments.
+ Implement a constructor function Catalog() with items[] array. Add some methods in prototype addItem(anItem), removeItem(anItem), addItems(items[]), findItem(itemId).
+[14:21:03] mamatha siripi07: r u understand
+[14:21:17] Subhrajit Nayak: tryingto implement
+[14:21:43] mamatha siripi07: kk
+[14:32:50] Subhrajit Nayak: without object.create its also possible
+[14:33:02] mamatha siripi07: kk
+[14:34:30] mamatha siripi07: plase send me code
+[14:36:33] Subhrajit Nayak:     var Item = function(id, name, price, type){
+        this.id=id;
+        this.name=name;
+        this.price=price;
+        this.type=type;
+    }
+
+    var catalogs = function(){
+        this.items = [];
+    }
+    catalogs.prototype.addItem=function(obj){
+        this.items.push(obj);
+    }
+    catalogs.prototype.removeItem=function(){
+
+    }
+
+    //Initiate Catalog Object
+    var cat_items = new catalogs();
+
+    //First Item
+    var item_1 = new Item(1,"T-shirt",33.45,"Apparel");
+    cat_items.addItem(item_1);
+
+    //Second Item
+    //var item_2= Object.create(item_1);
+    item_1.id=2;
+    item_1.name="Trolley Bag";
+    item_1.price=2200;
+    item_1.type="Bag";
+    cat_items.addItem(item_1);
+
+    console.log(cat_items);
+[14:40:46] Subhrajit Nayak: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inheritance</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/javascript">
+
+    var Item = function(id, name, price, type){
+        this.id=id;
+        this.name=name;
+        this.price=price;
+        this.type=type;
+    }
+
+    var catalogs = function(){
+        this.items = [];
+    }
+    catalogs.prototype.addItem=function(obj){
+        this.items.push(obj);
+        document.getElementById('container').innerHTML=JSON.stringify(this.items);
+    }
+    catalogs.prototype.removeItem=function(){
+
+    }
+
+    //Initiate Catalog Object
+    var cat_items = new catalogs();
+
+    //First Item
+    var item_1 = new Item(1,"T-shirt",33.45,"Apparel");
+    cat_items.addItem(item_1);
+
+    //Second Item
+    var item_2= Object.create(item_1);
+    item_2.id=2;
+    item_2.name="Trolley Bag";
+    item_2.price=2200;
+    item_2.type="Bag";
+    cat_items.addItem(item_2);
+
+    console.log(cat_items);
+
+    </script>
+</body>
+</html>
