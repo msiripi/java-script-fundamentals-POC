@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        function convert(value,str) {
+            if (str === "number") {
+                return Number(value);
+            }
+            if (str === "boolean") {
+                return Boolean(value);
+            }
+            if (str === "string") {
+                return String(value);
+            }
+        }
+
+        alert(convert(NaN, 'boolean'));
+        alert(convert("ddd", 'number'))
+        alert(convert(123, 'number'))
+        alert(convert(false, 'boolean'));
+        alert(convert(2344, 'string'))
+        alert(convert(333,'str'))//----undefined
+        alert(convert("", 'number'))
+        alert(convert("",'string'))
+        //on one if conditions not excuted that time its return undefind
+    </script>
+</body>
+</html>
